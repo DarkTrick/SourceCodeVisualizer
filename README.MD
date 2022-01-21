@@ -1,6 +1,6 @@
 This is a VSCode extension to create dynamically growing diagrams. See the video below or [watch the Youtube video (2:20m)](https://youtu.be/CesCUSQTRLg) to get a grasp of what it does.
 
-![Quick example video](vscodeextension/media_marketplace/quick_example.gif)
+![Quick example video](src/vscodeextension/media_marketplace/quick_example.gif)
 
 
 Install

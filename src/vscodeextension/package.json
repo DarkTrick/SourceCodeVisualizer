@@ -1,7 +1,7 @@
 {
   "publisher": "visualprogrammingx",
   "name": "SourceCodeVisualizer",
-  "version": "0.1.2",
+  "version": "0.1.3",
 
   "displayName": "Souce Code Visualizer",
   "description": "Root build script for the Visual Programming System",
@@ -16,7 +16,7 @@
 
   "repository": {
       "type": "git",
-      "url":  "https://github.com/DarkTrick/SourceCodeVisualizer/vscodeextension"
+      "url":  "https://github.com/DarkTrick/SourceCodeVisualizer"
   },
 
   "bugs": {

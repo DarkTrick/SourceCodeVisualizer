@@ -3,6 +3,7 @@ TESTS MUST BE DONE IN CHROME! (because VSCode uses chrome)
 Next up
 ========
 - Allow editing  
+- A window should never be above lines, that are connected to itself
 
 
 TODO

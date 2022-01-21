@@ -1,0 +1,8 @@
+/**
+ CSS-File for general CSS
+**/
+
+.resizable {
+  resize: both;
+  overflow:auto;
+}

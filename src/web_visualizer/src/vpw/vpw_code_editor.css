@@ -1,0 +1,33 @@
+.VpwCodeEditor{
+  font-family: monospace;
+  line-height: 130%;
+
+  background-color: rgba(255, 255, 255, 0.404);
+
+  margin-left: 5px;
+  margin-bottom: 5px;
+  width:calc(100% - 10px);
+
+  white-space: pre;
+
+  padding-right: 3px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  border: 0px solid black;
+
+  overflow: auto; /* <=> scroll + hidden*/
+
+  counter-reset: vpwcodeeditorline;
+}
+
+.VpwCodeEditor div:before {
+  content: counter(vpwcodeeditorline);
+  font-size: 80%;
+  color:rgba(0, 0, 0, 0.404);
+  vertical-align: middle;
+}
+
+.VpwCodeEditor div{
+  counter-increment: vpwcodeeditorline;
+}

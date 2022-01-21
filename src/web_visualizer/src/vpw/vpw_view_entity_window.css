@@ -1,0 +1,16 @@
+.VpwViewEntityWindow {
+  animation-name: VpwViewEntityWindowOpen;
+  animation-duration: 0.3s;
+}
+
+@keyframes VpwViewEntityWindowOpen{
+
+  from{
+    opacity: 0;
+    transform: scaleY(0.9) scaleX(1.1) translate(-20%,0px);
+  }
+  to{
+    opacity: 1;
+    transform: scaleY(1) scaleX(1) translate(0px,0px);
+  }
+}

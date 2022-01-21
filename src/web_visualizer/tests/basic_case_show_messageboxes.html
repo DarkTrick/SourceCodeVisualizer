@@ -1,0 +1,70 @@
+<!DOCTYPE html><html><head>
+<script type="text/javascript">
+/**
+ *
+ * Manual Visual Test:
+ * ===================
+ *
+ * Show all message box presets and one arbitrary.
+ * (All test-specific stuff happens in this `script` area)
+ *
+ **/
+
+function initTestCase()
+{
+  gBackend = new BackendMock ();
+  //gBackend.add
+  checkDepsAndInit ();
+  showMessageBoxes (gBackend);
+}
+
+
+function showMessageBoxes(backend)
+{
+  let type = "messageBox";
+  let requestId = null;
+  let data = [
+    {
+      type: "arbitrary type",
+      title: "testtitle arbitrary type",
+      message: "testcontent"
+    },
+    {
+      type: "Error",
+      title: "Error message title",
+      message: "Error message content"
+    },
+    {
+      type: "Warning",
+      title: "Warning message title",
+      message: "Warning message content"
+    },
+    {
+      type: "Info",
+      title: "Info message title",
+      message: "Info message content"
+    },
+
+  ];
+  window_postRequest(type, requestId, data);
+}
+
+// --------------------------------------------------------------
+
+</script>
+
+<meta charset="utf-8"/>
+<title>VP test: show messageboxes</title>
+
+<link rel="stylesheet" type="text/css" href="../release/web_visualizer.css">
+<link rel="stylesheet" type="text/css" href="./shared_files/browserSystem.css">     <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+
+<script type="text/javascript" src="./shared_files/backendEmulation.js"></script>    <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+<script type="text/javascript" src="./shared_files/exampleoutlineData.js"></script>    <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+<script type="text/javascript" src="../release/web_visualizer.js">        </script>
+<script type="text/javascript" src="./shared_files/browserSystem.js">  </script>    <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+
+</head>
+<body  onload="javascript: initTestCase();">
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+.button_flat {
+  padding: 0px;
+  min-width: 20px;
+  vertical-align: top;
+  text-align: center;
+  user-select: none;
+  background-color: unset;
+  display: inline-block;
+
+  margin: 0px;
+
+
+  border: 0px;
+}
+
+.button_flat:hover{
+  background-color: rgba(255, 255, 255, 0.438);
+}
+.button_flat:active{
+  background-color: rgba(214, 214, 214, 0.438);
+}

@@ -1,0 +1,17 @@
+.VgfPopupWindow{
+  animation-name: VgfPopupWindowOpen;
+  animation-duration: 0.05s;
+  animation-timing-function: linear;
+}
+
+
+@keyframes VgfPopupWindowOpen{
+  from{
+    opacity: 0;
+    transform: scaleY(0.7) scaleX(0.9) translate(-00px,-20px);
+  }
+  to{
+    opacity: 1;
+    transform: scaleY(1) scaleX(1) translate(0px,0px);
+  }
+}

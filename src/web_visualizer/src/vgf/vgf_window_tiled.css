@@ -1,0 +1,123 @@
+/* ****************************************************
+*******************************************************
+************* Window Mgr Windows **********************
+*******************************************************
+******************************************************/
+.Window_OuterFrame {
+
+  /*width: 250px; /**/
+  /*width: auto;*/
+
+  border: 1px solid rgb(200, 200, 200);
+  background-color: rgb(231, 231, 231);
+  border-radius: 3px;
+
+
+}
+
+
+.Window_InnerFrame {
+  padding-bottom: 1px;
+  border-radius: 3px;
+}
+
+.Window_InnerFrame hr { color: rgb(192, 192, 192); margin-top:0px; }
+
+.Window_Titlebar {
+  user-select: none;
+  display: table;
+  width: 100%;
+}
+
+.Window_Titlearea {
+  padding-bottom: 7px;
+  padding-top: 7px;
+  width: 100%;
+  user-select: none;
+}
+
+/*.expandable_title_extended .Window_Titlearea {
+
+}*/
+
+.expandable_title_collapsed .Window_Titlearea {
+  white-space: nowrap;
+  max-width: 24em;
+  overflow: hidden;
+
+  /* fading text */
+  /* Also blurrs text to an illegible degree, so deactivated
+  mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  */
+}
+
+
+.VgfWindowTiled_WindowButtonsDiv{
+  vertical-align: top;
+  float: right;
+}
+
+
+.Window_Titlebar_MetatypeDiv {
+  font-size: 65%;
+  position: absolute;
+  top: 4px;
+  left: 22px;
+  color:blue;
+
+}
+
+.Window_Titlebar_Title {
+  padding: 5px;
+  padding-left: 3px;
+  padding-bottom: 0px;
+  position: relative;
+  top: 6px;
+  left: -3px;
+
+  font-family: monospace;
+}
+
+
+.Window_btn {
+  padding: 2px;
+  vertical-align: middle;
+  text-align: center;
+
+  user-select: none;
+}
+
+.Window_btn:hover{
+  background-color: rgba(255, 255, 255, 0.438);
+}
+.Window_btn:active{
+  background-color: rgba(214, 214, 214, 0.438);
+}
+
+.Window_btnClose{
+  min-width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+}
+
+.Window_btnClose:hover{
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+}
+
+
+.Window_btnClose:active{
+  background-color: rgb(255, 100, 100);
+  color: white;
+
+}
+
+.Window_Clientarea{
+  /* Border like for class diagrams */
+  /* border-top: 1px solid rgba(200, 200, 200); */
+  padding:2px;
+}

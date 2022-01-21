@@ -1,0 +1,45 @@
+.VpwMessageWindow .Window_Titlearea
+{
+  padding-right: 12px;
+  white-space: nowrap;
+  font-weight: bold;
+
+  min-width: 200px;
+}
+
+.VpwMessageWindow.Error {
+  background-color:rgb(251, 223, 223);
+  color: rgb(107, 0, 0);
+}
+
+.VpwMessageWindow.Error .Window_Titlearea::before {
+  content: "🧐 ";
+}
+
+.VpwMessageWindow.Warning
+{
+  background-color:rgb(252, 255, 226);
+  color: rgb(32, 33, 98);
+}
+
+.VpwMessageWindow.Warning .Window_Titlearea::before {
+  content: "🤔 ";
+}
+
+.VpwMessageWindow.Info
+{
+  background-color:rgb(226, 242, 255);
+  color: rgb(32, 33, 98);
+}
+.VpwMessageWindow.Info .Window_Titlearea::before {
+  content: "🤫 ";
+}
+
+
+.VpwMessageWindow .Window_Clientarea
+{
+  padding-top:    7px;
+  padding-bottom: 7px;
+  padding-left:  12px;
+  padding-right: 12px;
+}

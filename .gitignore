@@ -1,0 +1,7 @@
+node_modules/*
+**/out/*
+**/release/*
+.yo-repositoriy/*
+node_modules
+.vscode-test
+__pycache__

@@ -1,0 +1,31 @@
+.VpwButtonMovableBtn,
+.VpwButtonMovable {
+  padding-left: 1px;
+  padding-right: 1px;
+  margin: 0px;
+  /*border: 1px solid grey;*/
+  border-width: 1px;
+  border-radius: 2px;
+  width: 13px;
+  height: 13px;
+  border-color: #00000040;
+
+  /* remove focus shadow*/
+  box-shadow: none;
+}
+
+.VpwButtonMovableBtn span {
+  position: relative;
+  top: -4px;
+}
+
+.VpwButtonMovableBtn:hover {
+  background-color: Window;
+}
+
+
+.VpwButtonMovableBtn button::-moz-focus-inner {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}

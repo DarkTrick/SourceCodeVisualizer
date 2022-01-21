@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head>
+
+<!-- Attention @ Changes:
+        VSCode does currently not use the content of this file. Instead, a redundant version of
+        this content is written inside the extension.ts file. To make changes apply to VSCode
+        as well, changes in this file must also be made within the redundant copy inside extension.ts.
+-->
+
+
+<meta charset="utf-8"/>
+<title>Window mgr windows</title>
+<link rel="stylesheet" type="text/css" href="../release/web_visualizer.css">
+<link rel="stylesheet" type="text/css" href="browserSystem.css">     <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+
+<script type="text/javascript" src="vscodeEmulation.js"></script>    <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+<script type="text/javascript" src="../release/web_visualizer.js">        </script>
+<script type="text/javascript" src="browserSystem.js">  </script>    <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+
+<script type="text/javascript">
+function checkDepsAndInit()
+{
+   if (!(typeof initSystem === 'function')) {
+      let msg = "<b>FATAL ERROR:<b> Please check, if the file '../release/web_visualizer.js' exists. <br>" +
+      "<i>Background:</i> I can't find the `initSystem` function, that's supposed to be in that file";
+      let container = document.createElement ("div");
+      container.innerHTML = msg;
+      document.body.appendChild (container);
+      return;
+   }
+
+   initSystem();
+}
+
+</script>
+</head>
+
+<body  onload="javascript: checkDepsAndInit ()">
+
+</body>
+</html>

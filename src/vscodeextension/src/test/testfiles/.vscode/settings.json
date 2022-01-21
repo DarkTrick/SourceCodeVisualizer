@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.y": "cpp",
+    "*.l": "cpp",
+    "streambuf": "cpp"
+  }
+}

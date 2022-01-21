@@ -1,0 +1,14 @@
+{
+  "files.watcherExclude": {
+    "**/highlightjs/**": true,
+    "**/release/**": true
+  },
+  "search.exclude": {
+    "**/highlightjs/**": true,
+    "**/release/**": true
+  },
+  "files.exclude": {
+    "**/highlightjs/**": true,
+    "**/release/**": true
+  }
+}

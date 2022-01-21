@@ -1,0 +1,10 @@
+.VgfWindow_focussed{
+  /*box-shadow: inset 0px 0px 7px #00FF5555;*/
+  box-shadow: 0px 0px 7px #00000055;
+}
+
+
+.VgfWindow{
+  display: inline-block;
+  position: absolute;
+}

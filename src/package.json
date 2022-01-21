@@ -1,0 +1,17 @@
+{
+  "bugs": {
+      "url" : "https://github.com/DarkTrick/SourceCodeVisualizer/issues",
+      "email" : ""
+  },
+
+  "scripts": {
+      "install": "cd ./vscodeextension; npm install"
+    , "publish_vscodeExt": "cd vscodeextension; npm run publish; cd .."
+    , "copy_release_files":   "cp ./vscodeextension/release/* ../release/"
+
+    , "compile":     "npm run publish_vscodeExt"
+    , "postcompile": "npm run copy_release_files"
+    , "publish":     "npm run compile"
+  }
+
+}

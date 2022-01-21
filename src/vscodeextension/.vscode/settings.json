@@ -1,0 +1,16 @@
+{
+    "editor.insertSpaces": false,
+    "files.exclude": {
+        "*.txt": true,
+        "**/.*": true,
+        "**/media/**": true,
+        "**/out/*": true
+    },
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "files.watcherExclude": {
+        "**/media/**": true
+    },
+    "search.exclude": {
+        "**/media/**": true
+    }
+}

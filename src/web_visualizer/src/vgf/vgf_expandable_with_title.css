@@ -1,0 +1,10 @@
+.td_expanderButton
+{
+  width: 1px;
+  vertical-align: top;
+}
+
+.td_expanderButton .button_flat
+{
+  padding-bottom: 7px;
+}

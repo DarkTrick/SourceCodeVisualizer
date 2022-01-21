@@ -1,0 +1,8 @@
+#connectionCanvas{
+  z-index: 2;
+  position: absolute;
+  top:0;
+  left:0;
+  border: 0px;
+  pointer-events: none;
+}

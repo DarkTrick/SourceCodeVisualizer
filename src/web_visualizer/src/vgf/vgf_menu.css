@@ -1,0 +1,40 @@
+
+.VgfMenu{
+  border: 1px solid #a2a2a2;
+  background: #fcfcfc;
+
+  /*display: inline-block;
+  position: absolute;*/
+
+  padding: 0px;
+  margin: 0px;
+}
+
+.VgfMenuSeparator{
+  border-top: 1px solid rgba(0,0,0,0.213);
+  margin-top: 3px;
+
+  width: 100%;
+  max-height: 0px;
+}
+
+.VgfMenuEntry{
+  /* Have invisible border to prevent entry-wiggle on hover*/
+  border-top:    1px solid #0000;
+  border-bottom: 1px solid #0000;
+
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 5px;
+  padding-left: 17px;
+  padding-right: 17px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.VgfMenuEntry:hover{
+  border-top: 1px solid #2b71bc;
+  border-bottom: 1px solid #2b71bc;
+  background: linear-gradient(#5ca9f9, #3b8fe8);
+  color: whitesmoke;
+}

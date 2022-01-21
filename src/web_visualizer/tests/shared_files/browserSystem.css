@@ -1,0 +1,41 @@
+.controlElemTitle{
+  border:1px solid black;
+  padding:2px;
+  margin-top:5px;
+  width:150px;
+  line-height:25px;
+}
+
+.DebugPanelIndicator{
+  background: lightgrey;
+  border: 1px solid grey;
+  border-style:outset;
+  border-radius: 3px;
+  padding: 3px;
+
+  opacity: 0.5;
+}
+
+.DebugPanelLeft{
+  position: fixed;
+}
+
+.DebugPanelLeft .DebugPanelContent{
+  display: none;
+}
+.DebugPanelLeft .DebugPanelIndicator{
+  display: unset;
+}
+
+.DebugPanelLeft:hover {
+  padding: 5px;
+  border: 1px dashed black;
+}
+
+.DebugPanelLeft:hover .DebugPanelContent{
+  display: unset;
+}
+.DebugPanelLeft:hover .DebugPanelIndicator{
+  display: none;
+}
+

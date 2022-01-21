@@ -1,0 +1,44 @@
+.btnOpenDefinition {
+  /*float: right;*/
+  vertical-align: middle;
+  border-radius: 2px;
+  font-family: "Arial";
+  border:  none;
+  background: none;
+  color: black;
+  width: 13px;
+  height: 13px;
+  cursor:pointer;
+  padding: 0px;
+  padding-bottom: 1px;
+
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btnOpenDefinition:active{
+  border-top-color:#000;
+  border-left-color:#000;
+  border-bottom-color:#CCC;
+  border-right-color:#CCC;
+}
+
+.btnOpenDefinition:focus{
+  border: 1px rgb(0, 133, 185) dotted;
+  border-radius: 2px;
+  outline: none;
+}
+
+.VpwBtnOpenDefinition_ON,
+.VpwBtnOpenDefinition_ON:focus,
+.VpwBtnOpenDefinition_ON:hover
+{
+  background-color: #AAA;
+  border: 0px;
+  border-radius: 10px;
+}

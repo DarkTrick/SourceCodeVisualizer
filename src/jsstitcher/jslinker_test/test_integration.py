@@ -21,8 +21,7 @@ class TestIntegration(unittest.TestCase):
 
     file2_filename = str(path.split(file2.name)[1])
 
-    file1Content = "//@require: " + file2_filename + "\n" + \
-                   "//@output: " + outputFile.name + "\n" + \
+    file1Content = 'require ("' + file2_filename + '");\n' + \
                    "content_1"
     file2Content = "content_2"
 
@@ -36,12 +35,9 @@ class TestIntegration(unittest.TestCase):
     # ---- run ----
     jsStitcher = JsFileStitcher ([file1.name])
     jsStitcher.run()
-    jsStitcher.persistData()
 
     # ---- test ----
-    actual = ""
-    with open(outputFile.name, "r") as file:
-      actual = file.read()
+    actual = jsStitcher.getStitchedContent()
 
     self.assertEqual (expected, actual)
 

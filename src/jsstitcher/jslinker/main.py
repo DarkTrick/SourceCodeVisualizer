@@ -8,43 +8,32 @@ class JsStitcherCUI:
   @staticmethod
   def showHelp():
     print("""
- Usage: jsstitcher inputfile
+ Run: jsstitcher inputfile
 
  Works like a simplified version of the C++ preprocessor.
 
- Commands within js files:
-
-  //@require: <file path>
-    Tells jsstitcher to include file content of <file path> into the output
-    file before the following code.
-
-  //@output: <file path>
-    Tells jsstitcher where to output the final product.
-    - jsstitcher will use only the `output` value of the first given file.
+  - require ("<file path>");
+    Tells jsstitcher to include file content of <file path> into the output.
       E.g.
-           fileA:                        fileB:
-             //@require: fileB             //@output:  b.js
-             //@output:  a.js
+        fileA:
+          require ("fileB.js");
 
-      jsstitcher fileA   =>  jsstitcher will output to a.js
+  IMPORTANT:
+    Use exaclty the pattern described above:
+    - There must be exactly one space before the bracket
+    - Use doublequotes ( " ) only - no single quotes
+    - There must be a semicolon at the end
 
-   - Within the first given file, the last appear will be used.
-     E.g.
-         //@output: ../script.js
-         //@output: ../myoutput.js  =>  output to `../myoutput.js`
-
- Constraints:
+  Constraints:
    - Does not solve dependency loops and would run forever then.
       (E.g. A -> B -> C -> A)
-
-
     """)
 
   def _run (self, infile):
     stitcher = JsFileStitcher ([infile])
     result = stitcher.run()
     if (result == True):
-      stitcher.persistData()
+      print (stitcher.getStitchedContent ())
     else:
       print (result)
 

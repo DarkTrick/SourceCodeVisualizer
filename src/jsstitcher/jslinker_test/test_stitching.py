@@ -8,25 +8,9 @@ class TestMain_Stitching(unittest.TestCase):
 
   # ------------------------------------------------------
 
-  def test_error_msg_unknown_keyword  (self):
-    # setup
-    files = {"/fileA": "//@randomKeyword: aaa\n"}
-    dataContentProvider = DataContentProviderMock (files)
-
-    # run
-    jsStitcher = JsStitcher (["/fileA"], dataContentProvider)
-    actual = jsStitcher.run ()
-
-    # test
-    self.assertTrue ("Unknown keyword" in actual, "\n\nactual: " + actual)
-    self.assertTrue ("/fileA" in actual, "\n\nactual: " + actual)
-    self.assertTrue ("Line: 1" in actual, "\n\nactual: " + actual)
-
-  # ------------------------------------------------------
-
   def test_error_msg_file_not_found(self):
     # setup
-    files = {"/fileA": "//@require: fileB\n1"}
+    files = {"/fileA": 'require ("fileB");\n1'}
     dataContentProvider = DataContentProviderMock (files)
 
     # run
@@ -60,7 +44,7 @@ class TestMain_Stitching(unittest.TestCase):
       A -> B
     """
     files = {}
-    files["/fileA"] = "//@require: fileB\n" + \
+    files["/fileA"] = 'require ("fileB");\n' + \
                      "1"
     files["/fileB"] = "2"
 
@@ -80,8 +64,8 @@ class TestMain_Stitching(unittest.TestCase):
         -> C
     """
     files = {}
-    files["/fileA"] = "//@require: fileB\n" + \
-                     "//@require: fileC\n" + \
+    files["/fileA"] = 'require ("fileB");\n' + \
+                     'require ("fileC");\n' + \
                      "1"
     files["/fileB"] = "2"
     files["/fileC"] = "3"
@@ -104,12 +88,12 @@ class TestMain_Stitching(unittest.TestCase):
         -> D
     """
     files = {}
-    files["/fileA"] = "//@require: fileB\n" + \
-                     "//@require: fileC\n" + \
-                     "//@require: fileD\n" + \
-                     "1"
-    files["/fileB"] = "//@require: fileC\n" + \
-                     "2"
+    files["/fileA"] = 'require ("fileB");\n' + \
+                      'require ("fileC");\n' + \
+                      'require ("fileD");\n' + \
+                      "1"
+    files["/fileB"] = 'require ("fileC");\n' + \
+                      "2"
     files["/fileC"] = "3"
     files["/fileD"] = "4"
 

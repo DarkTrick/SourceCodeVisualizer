@@ -28,7 +28,6 @@ class JsStitcher:
     """
     try:
       self._createStitchedContent()
-      self._extractOutfileInformation()
     except FileNotFoundError as e:
       return ("ERROR: " + str (e))
     except ParseException as e:

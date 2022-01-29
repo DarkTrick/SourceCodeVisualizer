@@ -12,6 +12,8 @@ class FileContentProvider (DataContentProvider):
       content = file.read()
     return content
 
+
+
   def write(self, filepath: str, content: str):
     """
       Write to file or - if filepath is empty - write to stdout

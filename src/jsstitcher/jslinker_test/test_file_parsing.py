@@ -34,26 +34,26 @@ class TestCreateFileFromContent(unittest.TestCase):
 
   def test_keywords_and_content(self):
     # setup
-    filecontent = "//@require: foo\n" + \
+    filecontent = 'require ("foo");\n' + \
                   "random content"
 
     # run
     file = ParsedFile.newFromContent (filecontent)
 
     # test
-    self.assertEqual (file.content, "random content")
     self.assertEqual (file.getRelativeDependencies()[0], "foo")
+    self.assertEqual (file.content, "random content")
 
   # ------------------------------------------------------------------------
 
   def test_keywordNeverFinishes(self):
     # setup
-    filecontent = "//@require foo"
+    filecontent = 'require ("foo")'
 
     # run
     try:
       ParsedFile.newFromContent (filecontent)
-      self.assertFalse ("An expection shoul've been thrown")
+      self.assertFalse ("An expection should've been thrown")
     except:
       pass
 
@@ -61,13 +61,13 @@ class TestCreateFileFromContent(unittest.TestCase):
 
   def test_keywordNeverFinishes_Second(self):
     # setup
-    filecontent = "//@require: foo\n" + \
-                  "//@require foo2"
+    filecontent = 'require ("foo");\n' + \
+                  'require ("foo2")'
 
     # run
     try:
       ParsedFile.newFromContent (filecontent)
-      self.assertFalse ("An expection shoul've been thrown")
+      self.assertFalse ("An expection should've been thrown")
     except ParseException as e:
       pass
 
@@ -91,7 +91,7 @@ class TestCreateFileFromContent_dependencies(unittest.TestCase):
 
   def test_oneDependency(self):
     # setup
-    fileContent = "//@require: asdf\n"
+    fileContent = 'require ("asdf");\n'
 
     # run & test
     self._test_dependencies (fileContent, ["asdf"])
@@ -100,7 +100,7 @@ class TestCreateFileFromContent_dependencies(unittest.TestCase):
 
   def test_dependency_without_linebreak_at_the_end(self):
     # setup
-    fileContent = "//@require: asdf"
+    fileContent = 'require ("asdf");'
 
     # run & test
     self._test_dependencies (fileContent, ["asdf"])
@@ -108,41 +108,12 @@ class TestCreateFileFromContent_dependencies(unittest.TestCase):
   # ------------------------------------------------------------------------
   def test_multipleDependency(self):
     # setup
-    fileContent = "//@require: dep1\n" + \
-                  "//@require: dep2\n" + \
-                  "//@require: dep3\n"
+    fileContent = 'require ("dep1");\n' + \
+                  'require ("dep2");\n' + \
+                  'require ("dep3");\n'
 
     # run & test
     self._test_dependencies (fileContent, ["dep1", "dep2", "dep3"])
 
   # ------------------------------------------------------------------------
 
-class TestCreateFileFromContent_output(unittest.TestCase):
-  def _test_output(self, filecontent, expectedOutfile):
-    # run
-    file = ParsedFile.newFromContent (filecontent)
-
-    # test
-    self.assertEqual (file.content, "")
-    self.assertEqual (file.outfile, expectedOutfile)
-
-  # ------------------------------------------------------------------------
-
-  def test_output(self):
-    # setup
-    filecontent = "//@output: asdf\n"
-
-    # run & test
-    self._test_output (filecontent, "asdf")
-
-  # ------------------------------------------------------------------------
-
-  def test_output_twice(self):
-    # setup
-    filecontent = "//@output: asdf\n" + \
-                  "//@output: newOutput\n"
-
-    # run & test
-    self._test_output (filecontent, "newOutput")
-
-  # ------------------------------------------------------------------------

@@ -1,9 +1,9 @@
 {
   "publisher": "visualprogrammingx",
   "name": "SourceCodeVisualizer",
-  "version": "0.1.3",
+  "version": "0.1.4",
 
-  "displayName": "Souce Code Visualizer",
+  "displayName": "Source Code Visualizer",
   "description": "Root build script for the Visual Programming System",
   "keywords": [
       "visualization",

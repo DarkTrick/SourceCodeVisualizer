@@ -19,6 +19,8 @@ export function activate(vscode: any)
   // register `VP LSP Extender`s
   {
     registerLspExtender (vscode, "Typescript", new VpLspExtenderCurlyBraces ("typescript"));
+    registerLspExtender (vscode, "typescriptreact", new VpLspExtenderCurlyBraces ("typescriptreact"));
+    registerLspExtender (vscode, "Dart",       new VpLspExtenderCurlyBraces ("dart"));
     registerLspExtender (vscode, "Cpp",        new VpLspExtenderCurlyBraces ("cpp"));
     registerLspExtender (vscode, "C",          new VpLspExtenderCurlyBraces ("c"));
     registerLspExtender (vscode, "Php",        new VpLspExtenderCurlyBraces ("Php"));

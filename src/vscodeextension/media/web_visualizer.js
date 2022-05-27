@@ -5097,10 +5097,16 @@ class SyntaxHighlighter
   static run (strSource, strLanguage = "")
   {
     let hightlighted = "";
-    if ("" == strLanguage)
-      hightlighted = hljs.highlightAuto (strSource).value
-    else
-      hightlighted = hljs.highlight (strSource, {language: strLanguage}).value
+    try {
+      if ("" == strLanguage)
+        hightlighted = hljs.highlightAuto (strSource).value
+      else
+        hightlighted = hljs.highlight (strSource, {language: strLanguage}).value
+    }
+    catch(error)
+    {
+      hightlighted = hljs.highlightAuto (strSource).value;
+    }
 
     return hightlighted;
   }

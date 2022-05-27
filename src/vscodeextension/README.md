@@ -47,7 +47,8 @@ Currently the following languages are supported:
 - Javascript (experimental)
 - Typescript (experimental)
 - Java (experimental)
-
+- Dart (experimental)
+- Typescript+React (experimental)
 
 # Planned Features
 

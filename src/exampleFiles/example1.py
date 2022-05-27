@@ -2,9 +2,11 @@
 
 def main():
   foo1()
-  foo2()
+  foo3()
 
 def foo1():
+  def foo2():
+    return 16
   tmp1 = foo2()
   tmp2 = foo3()
   return tmp1 + tmp2
@@ -39,12 +41,9 @@ def foo1():
 
 
 
-def foo2():
+def foo3():
   obj = MyClass2()
   return obj.myklass2_foo2()
-
-def foo3():
-  return 3
 
 def foo4():
 	"""tab indentation"""

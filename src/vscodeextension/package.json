@@ -1,10 +1,10 @@
 {
   "publisher": "visualprogrammingx",
   "name": "SourceCodeVisualizer",
-  "version": "0.1.4",
+  "version": "0.1.6",
 
   "displayName": "Source Code Visualizer",
-  "description": "Root build script for the Visual Programming System",
+  "description": "Visualize the calling structure of source code in a class diagram-like fashion",
   "keywords": [
       "visualization",
       "visualize",

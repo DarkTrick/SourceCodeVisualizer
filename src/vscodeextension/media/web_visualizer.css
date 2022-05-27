@@ -1,3 +1,257 @@
+#connectionCanvas{
+  z-index: 2;
+  position: absolute;
+  top:0;
+  left:0;
+  border: 0px;
+  pointer-events: none;
+}.VpwCodeEditor{
+  font-family: monospace;
+  line-height: 130%;
+
+  background-color: rgba(255, 255, 255, 0.404);
+
+  margin-left: 5px;
+  margin-bottom: 5px;
+  width:calc(100% - 10px);
+
+  white-space: pre;
+
+  padding-right: 3px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  border: 0px solid black;
+
+  overflow: auto; /* <=> scroll + hidden*/
+
+  counter-reset: vpwcodeeditorline;
+}
+
+.VpwCodeEditor div:before {
+  content: counter(vpwcodeeditorline);
+  font-size: 80%;
+  color:rgba(0, 0, 0, 0.404);
+  vertical-align: middle;
+}
+
+.VpwCodeEditor div{
+  counter-increment: vpwcodeeditorline;
+}.btnOpenDefinition {
+  /*float: right;*/
+  vertical-align: middle;
+  border-radius: 2px;
+  font-family: "Arial";
+  border:  none;
+  background: none;
+  color: black;
+  width: 13px;
+  height: 13px;
+  cursor:pointer;
+  padding: 0px;
+  padding-bottom: 1px;
+
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btnOpenDefinition:active{
+  border-top-color:#000;
+  border-left-color:#000;
+  border-bottom-color:#CCC;
+  border-right-color:#CCC;
+}
+
+.btnOpenDefinition:focus{
+  border: 1px rgb(0, 133, 185) dotted;
+  border-radius: 2px;
+  outline: none;
+}
+
+.VpwBtnOpenDefinition_ON,
+.VpwBtnOpenDefinition_ON:focus,
+.VpwBtnOpenDefinition_ON:hover
+{
+  background-color: #AAA;
+  border: 0px;
+  border-radius: 10px;
+}
+.Window_Clientarea_BlocksArea{
+  background-color: rgba(187, 187, 187, 0.082);
+  padding:2px;
+}
+
+.Window_Clientarea_OpenDeclarationBlock{
+  /*border-style: solid;
+  border-width: 1px;
+  border-color: grey white white grey;*/
+  font-family: monospace;
+
+  white-space: nowrap;
+
+  padding-top:7px;
+  padding-bottom:7px;
+  padding-left:10px;
+  padding-right:10px;
+  margin: 3px;
+
+  background: linear-gradient(180deg, #e5e5e5 0%, #dAdAdA 100%);
+  border-radius: 3px;
+
+  user-select: none;
+
+}
+
+.Window_Clientarea_OpenDeclarationBlock:hover{
+  background: linear-gradient(180deg, #eAeAeA 0%, #dFdFdF 100%);
+}
+
+.Window_Clientarea_OpenDeclarationBlock:active{
+  background:  #cfcfcf;
+}
+
+
+.viewEntityRepr_OutlineKindIndicator {
+  color: blue;
+  font-size: 80%;
+  position:relative;
+  top: -1px;
+  left: -1.5px;
+  display: inline-block;
+  border-right: 1px solid black;
+  padding-right: 2px;
+  margin-right: 1px;
+  /*border-radius: 10px;
+  min-width: 5px;
+  margin-right: 2px;
+
+  padding-left:4px;
+  box-shadow: 0px 0px 1px black;*/
+}.VpwButtonMovableBtn,
+.VpwButtonMovable {
+  padding-left: 1px;
+  padding-right: 1px;
+  margin: 0px;
+  /*border: 1px solid grey;*/
+  border-width: 1px;
+  border-radius: 2px;
+  width: 13px;
+  height: 13px;
+  border-color: #00000040;
+
+  /* remove focus shadow*/
+  box-shadow: none;
+}
+
+.VpwButtonMovableBtn span {
+  position: relative;
+  top: -4px;
+}
+
+.VpwButtonMovableBtn:hover {
+  background-color: Window;
+}
+
+
+.VpwButtonMovableBtn button::-moz-focus-inner {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
+.VpwMessageWindow .Window_Titlearea
+{
+  padding-right: 12px;
+  white-space: nowrap;
+  font-weight: bold;
+
+  min-width: 200px;
+}
+
+.VpwMessageWindow.Error {
+  background-color:rgb(251, 223, 223);
+  color: rgb(107, 0, 0);
+}
+
+.VpwMessageWindow.Error .Window_Titlearea::before {
+  content: "🧐 ";
+}
+
+.VpwMessageWindow.Warning
+{
+  background-color:rgb(252, 255, 226);
+  color: rgb(32, 33, 98);
+}
+
+.VpwMessageWindow.Warning .Window_Titlearea::before {
+  content: "🤔 ";
+}
+
+.VpwMessageWindow.Info
+{
+  background-color:rgb(226, 242, 255);
+  color: rgb(32, 33, 98);
+}
+.VpwMessageWindow.Info .Window_Titlearea::before {
+  content: "🤫 ";
+}
+
+
+.VpwMessageWindow .Window_Clientarea
+{
+  padding-top:    7px;
+  padding-bottom: 7px;
+  padding-left:  12px;
+  padding-right: 12px;
+}
+.VpwViewEntityWindow {
+  animation-name: VpwViewEntityWindowOpen;
+  animation-duration: 0.3s;
+}
+
+@keyframes VpwViewEntityWindowOpen{
+
+  from{
+    opacity: 0;
+    transform: scaleY(0.9) scaleX(1.1) translate(-20%,0px);
+  }
+  to{
+    opacity: 1;
+    transform: scaleY(1) scaleX(1) translate(0px,0px);
+  }
+}body{
+  font-size:80%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+textarea{
+  font-size:85%;
+}
+
+.button_flat {
+  padding: 0px;
+  min-width: 20px;
+  vertical-align: top;
+  text-align: center;
+  user-select: none;
+  background-color: unset;
+  display: inline-block;
+
+  margin: 0px;
+
+
+  border: 0px;
+}
+
+.button_flat:hover{
+  background-color: rgba(255, 255, 255, 0.438);
+}
+.button_flat:active{
+  background-color: rgba(214, 214, 214, 0.438);
+}
 .VgfPopupWindow{
   animation-name: VgfPopupWindowOpen;
   animation-duration: 0.05s;
@@ -14,6 +268,33 @@
     opacity: 1;
     transform: scaleY(1) scaleX(1) translate(0px,0px);
   }
+}.VgfWorld
+{
+  /* Debugging: see where world is */
+  border: 1px solid red;
+}.VgfNavigationArea{
+  overflow: hidden;
+  background-color: #d0d0e0aa;
+}
+
+.VgfNavigationArea, .VgfInteractionArea
+  {
+  width: 100%;
+  height: 100%;
+
+  /* needed to allow height=100% */
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}.VgfWidget_dragging{
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.205);
+}/**
+ CSS-File for general CSS
+**/
+
+.resizable {
+  resize: both;
+  overflow:auto;
 }
 .VgfMenu{
   border: 1px solid #a2a2a2;
@@ -53,15 +334,6 @@
   border-bottom: 1px solid #2b71bc;
   background: linear-gradient(#5ca9f9, #3b8fe8);
   color: whitesmoke;
-}.VgfWidget_dragging{
-  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.205);
-}/**
- CSS-File for general CSS
-**/
-
-.resizable {
-  resize: both;
-  overflow:auto;
 }.td_expanderButton
 {
   width: 1px;
@@ -193,30 +465,6 @@
   /* Border like for class diagrams */
   /* border-top: 1px solid rgba(200, 200, 200); */
   padding:2px;
-}.VgfNavigationArea{
-  overflow: hidden;
-  background-color: #d0d0e0aa;
-}
-
-.VgfNavigationArea, .VgfInteractionArea
-  {
-  width: 100%;
-  height: 100%;
-
-  /* needed to allow height=100% */
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}.VgfWorld
-{
-  /* Debugging: see where world is */
-  border: 1px solid red;
-}.VgfLine
-{
-  pointer-events: none;
-  position: relative;
-  width: 0px;
-  height: 0px;
 }.VgfWindow_focussed{
   /*box-shadow: inset 0px 0px 7px #00FF5555;*/
   box-shadow: 0px 0px 7px #00000055;
@@ -226,253 +474,12 @@
 .VgfWindow{
   display: inline-block;
   position: absolute;
-}
-.button_flat {
-  padding: 0px;
-  min-width: 20px;
-  vertical-align: top;
-  text-align: center;
-  user-select: none;
-  background-color: unset;
-  display: inline-block;
-
-  margin: 0px;
-
-
-  border: 0px;
-}
-
-.button_flat:hover{
-  background-color: rgba(255, 255, 255, 0.438);
-}
-.button_flat:active{
-  background-color: rgba(214, 214, 214, 0.438);
-}
-body{
-  font-size:80%;
-  font-family: Arial, Helvetica, sans-serif;
-}
-textarea{
-  font-size:85%;
-}
-.btnOpenDefinition {
-  /*float: right;*/
-  vertical-align: middle;
-  border-radius: 2px;
-  font-family: "Arial";
-  border:  none;
-  background: none;
-  color: black;
-  width: 13px;
-  height: 13px;
-  cursor:pointer;
-  padding: 0px;
-  padding-bottom: 1px;
-
-
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.btnOpenDefinition:active{
-  border-top-color:#000;
-  border-left-color:#000;
-  border-bottom-color:#CCC;
-  border-right-color:#CCC;
-}
-
-.btnOpenDefinition:focus{
-  border: 1px rgb(0, 133, 185) dotted;
-  border-radius: 2px;
-  outline: none;
-}
-
-.VpwBtnOpenDefinition_ON,
-.VpwBtnOpenDefinition_ON:focus,
-.VpwBtnOpenDefinition_ON:hover
+}.VgfLine
 {
-  background-color: #AAA;
-  border: 0px;
-  border-radius: 10px;
-}
-.VpwButtonMovableBtn,
-.VpwButtonMovable {
-  padding-left: 1px;
-  padding-right: 1px;
-  margin: 0px;
-  /*border: 1px solid grey;*/
-  border-width: 1px;
-  border-radius: 2px;
-  width: 13px;
-  height: 13px;
-  border-color: #00000040;
-
-  /* remove focus shadow*/
-  box-shadow: none;
-}
-
-.VpwButtonMovableBtn span {
+  pointer-events: none;
   position: relative;
-  top: -4px;
-}
-
-.VpwButtonMovableBtn:hover {
-  background-color: Window;
-}
-
-
-.VpwButtonMovableBtn button::-moz-focus-inner {
-  padding: 0px;
-  border: 0px;
-  margin: 0px;
-}
-.Window_Clientarea_BlocksArea{
-  background-color: rgba(187, 187, 187, 0.082);
-  padding:2px;
-}
-
-.Window_Clientarea_OpenDeclarationBlock{
-  /*border-style: solid;
-  border-width: 1px;
-  border-color: grey white white grey;*/
-  font-family: monospace;
-
-  white-space: nowrap;
-
-  padding-top:7px;
-  padding-bottom:7px;
-  padding-left:10px;
-  padding-right:10px;
-  margin: 3px;
-
-  background: linear-gradient(180deg, #e5e5e5 0%, #dAdAdA 100%);
-  border-radius: 3px;
-
-  user-select: none;
-
-}
-
-.Window_Clientarea_OpenDeclarationBlock:hover{
-  background: linear-gradient(180deg, #eAeAeA 0%, #dFdFdF 100%);
-}
-
-.Window_Clientarea_OpenDeclarationBlock:active{
-  background:  #cfcfcf;
-}
-
-
-.viewEntityRepr_OutlineKindIndicator {
-  color: blue;
-  font-size: 80%;
-  position:relative;
-  top: -1px;
-  left: -1.5px;
-  display: inline-block;
-  border-right: 1px solid black;
-  padding-right: 2px;
-  margin-right: 1px;
-  /*border-radius: 10px;
-  min-width: 5px;
-  margin-right: 2px;
-
-  padding-left:4px;
-  box-shadow: 0px 0px 1px black;*/
-}.VpwCodeEditor{
-  font-family: monospace;
-  line-height: 130%;
-
-  background-color: rgba(255, 255, 255, 0.404);
-
-  margin-left: 5px;
-  margin-bottom: 5px;
-  width:calc(100% - 10px);
-
-  white-space: pre;
-
-  padding-right: 3px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-
-  border: 0px solid black;
-
-  overflow: auto; /* <=> scroll + hidden*/
-
-  counter-reset: vpwcodeeditorline;
-}
-
-.VpwCodeEditor div:before {
-  content: counter(vpwcodeeditorline);
-  font-size: 80%;
-  color:rgba(0, 0, 0, 0.404);
-  vertical-align: middle;
-}
-
-.VpwCodeEditor div{
-  counter-increment: vpwcodeeditorline;
-}.VpwMessageWindow .Window_Titlearea
-{
-  padding-right: 12px;
-  white-space: nowrap;
-  font-weight: bold;
-
-  min-width: 200px;
-}
-
-.VpwMessageWindow.Error {
-  background-color:rgb(251, 223, 223);
-  color: rgb(107, 0, 0);
-}
-
-.VpwMessageWindow.Error .Window_Titlearea::before {
-  content: "🧐 ";
-}
-
-.VpwMessageWindow.Warning
-{
-  background-color:rgb(252, 255, 226);
-  color: rgb(32, 33, 98);
-}
-
-.VpwMessageWindow.Warning .Window_Titlearea::before {
-  content: "🤔 ";
-}
-
-.VpwMessageWindow.Info
-{
-  background-color:rgb(226, 242, 255);
-  color: rgb(32, 33, 98);
-}
-.VpwMessageWindow.Info .Window_Titlearea::before {
-  content: "🤫 ";
-}
-
-
-.VpwMessageWindow .Window_Clientarea
-{
-  padding-top:    7px;
-  padding-bottom: 7px;
-  padding-left:  12px;
-  padding-right: 12px;
-}
-.VpwViewEntityWindow {
-  animation-name: VpwViewEntityWindowOpen;
-  animation-duration: 0.3s;
-}
-
-@keyframes VpwViewEntityWindowOpen{
-
-  from{
-    opacity: 0;
-    transform: scaleY(0.9) scaleX(1.1) translate(-20%,0px);
-  }
-  to{
-    opacity: 1;
-    transform: scaleY(1) scaleX(1) translate(0px,0px);
-  }
+  width: 0px;
+  height: 0px;
 }/*!
   Theme: Default
   Description: Original highlight.js style
@@ -499,11 +506,3 @@ code.hljs{padding:3px 5px}
 .hljs-meta .hljs-string{color:#4d99bf}
 .hljs-emphasis{font-style:italic}
 .hljs-strong{font-weight:700}
-#connectionCanvas{
-  z-index: 2;
-  position: absolute;
-  top:0;
-  left:0;
-  border: 0px;
-  pointer-events: none;
-}

@@ -192,7 +192,7 @@ async function executeDefinitionProviderForRange(uri: vscode.Uri,
 
 function registerProvider(languageId: string, vpOutlineProvider: VpOutlineProvider)
 {
-  outlineProviderRegistry.register(languageId, vpOutlineProvider);
+  outlineProviderRegistry.register (languageId, vpOutlineProvider);
 }
 
 //-----------------------------------------------------------------
@@ -203,7 +203,7 @@ function registerProvider(languageId: string, vpOutlineProvider: VpOutlineProvid
 function registerLspExtenderProvider(languageId: string, vpLspExtenderProvider: VpLspExtenderProvider)
 {
   let vpOutlineProvider: VpOutlineProvider = new VpOutlineProviderWrapper (vpLspExtenderProvider);
-  outlineProviderRegistry.register(languageId, vpOutlineProvider);
+  outlineProviderRegistry.register (languageId, vpOutlineProvider);
 }
 
 //-----------------------------------------------------------------

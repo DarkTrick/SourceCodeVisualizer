@@ -1,13 +1,11 @@
-What is this?
-=============
+# What is this?
 Source root directory for the code structure visualizer.
 
-Install Environment
-===================
+# Install Environment
 
 *(Instruction for Ubuntu)*
 
-```
+```bash
 # install python3 (needed for web_visualizer
 sudo apt install python3
 
@@ -15,9 +13,8 @@ sudo apt install python3
 sudo apt install nodejs
 ```
 
-Build
-========
-```
+# Build
+```bash
 # install project specific dependencies
 npm run install
 
@@ -27,9 +24,17 @@ npm run compile
 
 This will create a VSCode extension file in `../release`
 
-
 For building individual subdirectories, use `npm run install` / `npm run compile`
 withing the various subdirectories
+
+# Release
+- Increase version: `./vscodeextension/package.json` :: `version`
+- Add contents to `./vscodeextension/CHANGELOG.md`
+- *build*
+- (test)
+- commit & push
+- upload the result to vscode marketplace
+
 
 
 Dependencies
@@ -162,8 +167,7 @@ This implementation can fully replace a language parser. I.e. `DefinitionProvide
 **This is stuff I wrote for myself; not yet structured**
 
 
-Facts on VSCode
------------------
+### Facts on VSCode
 - currently open document: vscode.window.activeTextEditor.document
    - has:
       - filename
@@ -174,15 +178,14 @@ Facts on VSCode
    - showInputBox
 
 
-Prototype Structure
------------------
+### Prototype Structure
 ./[prototype]/media contains a fully functional html version of
   the system. This content is loaded by VSCode, when run
   inside vscode. Pure html-changes should be done here.
 
 
-How to test?
------------------
+## How to test?
+
 - Open project in VSCode
 - If not yet done, do [Install environment] (see chapter below).
 - F5 for start debugging
@@ -190,19 +193,17 @@ How to test?
 - type "visualize code as diagram" to start the webview
 
 
-Install environment
------------------
-sudo apt-get install nodejs
+## Install environment
+- linux: `sudo apt-get install nodejs`
 
 # install yeoman and vs code extension gen
-sudo npm install -g yo generator-code
+- linux: `sudo npm install -g yo generator-code`
 
 # Here you find information:
 https://code.visualstudio.com/api/extension-guides/overview
 
 
-Common
------------------
+## Common
 - Content: package.json:
   - dependencies
   - Extension entry point (`main`)
@@ -213,8 +214,7 @@ Common
 - Before opening/ editing / running Webview-extensions:
   `npm install`
 
-Client / Server Architecture
-----------------------------------
+## Client / Server Architecture
 - Language Server Protocol:
 
     Editor1: Lang Client
@@ -226,8 +226,8 @@ Client / Server Architecture
      code, if a respective function was called.
 
 
-Specific
------------------
+## Specific
+
 
 - WebView API: create complete custom UI with HTML,Javascript,CSS
 - Custom Editor API: Create custom read/write editor for files

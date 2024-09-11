@@ -1,9 +1,11 @@
 # Change Log
 
-All notable changes to the "helloworld" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [v0.1.7]
 
-## [Unreleased]
+- hotfix: Made text legible in dark mode.
+
+
+## [v0.1.6]
 
 - Initial release

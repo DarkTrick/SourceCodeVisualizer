@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Prevent any caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar with Iframes</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .iframe-container {
+            flex: 1;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+      <a href="basic_show_class.html" target="contentFrame">basic show class</a>
+      <a href="basic_show_function.html" target="contentFrame">basic show function</a>
+        <a href="basic_case_show_messageboxes.html" target="contentFrame">basic case show messageboxes</a>
+        <a href="_arbitrary_tests.html" target="contentFrame">arbitrary tests</a>
+    </div>
+    <iframe name="contentFrame" class="iframe-container" src=""></iframe>
+</body>
+</html>

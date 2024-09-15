@@ -89,14 +89,16 @@ class BackendMock
         {
           let fileContent = file.contentLineBuffer;
           let line = fileContent[message.data.cursorStart.line];
+          console.log("Source code line: ", line)
           let idStart = line.substr(message.data.cursorStart.character);
           let idEndPos = idStart.search("[^a-zA-Z0-9_]")
           identifier = idStart.substr(0,idEndPos).trim();
+          console.log("Identifier found: ", identifier)
         }
         break;
         case "outline_requestLocationDefiner":
         {
-          // just deliver an arbitrary entity as parent
+          console.log("INFO: just deliver an arbitrary entity as parent");
           identifier = "foo1b";
         }
         case "vp_host_openRawSource":
@@ -116,11 +118,11 @@ class BackendMock
       }
     }
 
-    console.debug ("vscodeEmulation: identifier: `" + identifier + "`");
+    console.log ("vscodeEmulation: identifier: `" + identifier + "`");
 
     if (identifier == ""){
-      console.debug ("vscodeEmulation: changed identifier");
-      identifier = "foo1b";
+      console.log ("vscodeEmulation: changed identifier");
+      identifier = "unknown_identifier";
     }
 
     // Using identifier, get the returning object

@@ -17,7 +17,7 @@
   padding-right:10px;
   margin: 3px;
 
-  background: linear-gradient(180deg, #e5e5e5 0%, #dAdAdA 100%);
+  background: var(--declaration-button-background);
   border-radius: 3px;
 
   user-select: none;
@@ -25,16 +25,16 @@
 }
 
 .Window_Clientarea_OpenDeclarationBlock:hover{
-  background: linear-gradient(180deg, #eAeAeA 0%, #dFdFdF 100%);
+  background: var(--declaration-button-background-hover);
 }
 
 .Window_Clientarea_OpenDeclarationBlock:active{
-  background:  #cfcfcf;
+  background:  var(--declaration-button-background-active);
 }
 
 
 .viewEntityRepr_OutlineKindIndicator {
-  color: blue;
+  color: var(--source-code-entity-class);
   font-size: 80%;
   position:relative;
   top: -1px;

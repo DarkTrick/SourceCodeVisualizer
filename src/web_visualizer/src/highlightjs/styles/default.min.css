@@ -6,8 +6,13 @@
   Website: https://highlightjs.org/
   License: see project LICENSE
   Touched: 2021
-*/pre code.hljs{display:block;overflow-x:auto;padding:1em}
+*/
+pre code.hljs{display:block;overflow-x:auto;padding:1em}
 code.hljs{padding:3px 5px}
+
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+
 .hljs{background:#f0f0f0;color:#444}
 .hljs-comment{color:#078007}
 .hljs-punctuation,.hljs-tag{color:#444a}
@@ -22,5 +27,71 @@ code.hljs{padding:3px 5px}
 .hljs-built_in {color:rgb(59, 55, 0)}
 .hljs-meta{color:#1f7199}
 .hljs-meta .hljs-string{color:#4d99bf}
-.hljs-emphasis{font-style:italic}
-.hljs-strong{font-weight:700}
+
+
+/*!
+  Theme: dark
+  Description: Dark Theme partly copied from VSCode dark theme
+  Author: DarkTrick(created content here)
+*/
+.theme-dark .hljs {
+  background: #2b2b2b;
+  color: #f8f8f2;
+}
+
+.theme-dark .hljs-comment,
+.theme-dark .hljs-quote {
+  color: #6a9955;
+}
+
+.theme-dark .hljs-variable,
+.theme-dark .hljs-template-variable,
+.theme-dark .hljs-tag,
+.theme-dark .hljs-name,
+.theme-dark .hljs-selector-id,
+.theme-dark .hljs-selector-class,
+.theme-dark .hljs-regexp,
+.theme-dark .hljs-deletion {
+  color: #90d9da;
+}
+
+
+.theme-dark .hljs-number,
+.theme-dark .hljs-built_in,
+.theme-dark .hljs-literal,
+.theme-dark .hljs-type,
+.theme-dark .hljs-params,
+.theme-dark .hljs-meta,
+.theme-dark .hljs-link {
+  color: #a7cb8e;
+}
+
+.theme-dark .hljs-params {
+  color: #729db4;
+}
+
+.theme-dark .hljs-attr,
+.theme-dark .hljs-attribute {
+  color: #9cdcf0;
+}
+
+.theme-dark .hljs-string,
+.theme-dark .hljs-symbol,
+.theme-dark .hljs-bullet,
+.theme-dark .hljs-addition {
+  color: #c97e63;
+}
+
+.theme-dark .hljs-title,
+.theme-dark .hljs-section {
+  color: #f0c674;
+}
+
+.theme-dark .hljs-keyword,
+.theme-dark .hljs-selector-tag {
+  color: #569cd6;
+}
+
+.theme-dark .hljs-function {
+  color: #dcdcaa;
+}

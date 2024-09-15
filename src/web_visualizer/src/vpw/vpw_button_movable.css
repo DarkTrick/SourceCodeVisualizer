@@ -8,7 +8,9 @@
   border-radius: 2px;
   width: 13px;
   height: 13px;
-  border-color: #00000040;
+  color: var(--primary-1-foreground);
+  border-color: var(--primary-1-border);
+  background: var(--primary-1-background);
 
   /* remove focus shadow*/
   box-shadow: none;
@@ -19,8 +21,10 @@
   top: -4px;
 }
 
+
+
 .VpwButtonMovableBtn:hover {
-  background-color: Window;
+  background-color: var(--primary-1-background-hover);
 }
 
 

@@ -2,7 +2,7 @@
   font-family: monospace;
   line-height: 130%;
 
-  background-color: rgba(255, 255, 255, 0.404);
+  background-color: var(--editor-background);
 
   margin-left: 5px;
   margin-bottom: 5px;
@@ -14,7 +14,8 @@
   padding-top: 7px;
   padding-bottom: 7px;
 
-  border: 0px solid black;
+  border-width: 0px;
+  /* border: 0px solid black; */
 
   overflow: auto; /* <=> scroll + hidden*/
 
@@ -24,7 +25,7 @@
 .VpwCodeEditor div:before {
   content: counter(vpwcodeeditorline);
   font-size: 80%;
-  color:rgba(0, 0, 0, 0.404);
+  color: var(--editor-line-numbers);
   vertical-align: middle;
 }
 

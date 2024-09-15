@@ -1,23 +1,29 @@
 import * as vscode from 'vscode';
 import { getNonce } from './extensionutils';
 import * as path from 'path';
+import { VsCodeWindow } from './adapter/vscodewindow';
+import { WebvisualizerAdapter } from './adapter/webvisualizer';
+
 
 export class WebviewCreator
 {
-  private constructor(private _context: vscode.ExtensionContext)
+  private constructor(private _context: vscode.ExtensionContext,
+                      private _vscodeWindow: VsCodeWindow)
   {
 
   }
 
   // ------------------------------------------------------------------------
 
-  public static createWebview(context: vscode.ExtensionContext)
+  public static createWebview(context: vscode.ExtensionContext,
+                              vscodeWindow: VsCodeWindow): vscode.WebviewPanel
   {
-    const self = new WebviewCreator (context);
+    const self = new WebviewCreator (context, vscodeWindow);
+    const colorThemekind = self._vscodeWindow.activeColorTheme().kind;
 
     let tab = self._createNewTabInVsCode ();
     if (tab != null) {
-      self._createWebviewContent(tab.webview);
+      self._createWebviewContent(tab.webview, colorThemekind);
     }
 
     return tab;
@@ -30,7 +36,7 @@ export class WebviewCreator
 
   // ------------------------------------------------------------------------
 
-  private _createWebviewContent(webview: vscode.Webview) {
+  private _createWebviewContent(webview: vscode.Webview, colorThemeKind: vscode.ColorThemeKind) {
     // Use a nonce to whitelist which scripts can be run (copied from tutorials)
     const nonce = getNonce();
 
@@ -38,6 +44,8 @@ export class WebviewCreator
     const uri_jsFileVsCodeDependencies = this._webviewUri('scriptsVscDependant.js', webview);
     const uri_jsFile = this._webviewUri('web_visualizer.js', webview);
     const uri_cssFile = this._webviewUri('web_visualizer.css', webview);
+
+    const colorThemeKindCssClass = WebvisualizerAdapter.convertColorThemeKindToCssClass(colorThemeKind)
 
     // TODO: this content should be read out from FS.
     //       At the moment the code is redundant with the content of  ./media/main.html
@@ -51,7 +59,8 @@ export class WebviewCreator
       <script nonce="${nonce}" type="text/javascript" src="${uri_jsFile}"></script>
     </head>
 
-    <body  onload="javascript: initSystem();">
+    <body class="` + colorThemeKindCssClass +
+    String.raw`"  onload="javascript: initSystem();">
 
     </body>
     </html>`;

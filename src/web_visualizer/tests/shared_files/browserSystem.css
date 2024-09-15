@@ -1,5 +1,5 @@
 .controlElemTitle{
-  border:1px solid black;
+  border:1px solid var(--primary-1-border);
   padding:2px;
   margin-top:5px;
   width:150px;
@@ -7,8 +7,9 @@
 }
 
 .DebugPanelIndicator{
-  background: lightgrey;
-  border: 1px solid grey;
+  color: var(--primary-1-foreground);
+  background: var(--primary-1-background);
+  border: 1px solid var(--primary-1-border);
   border-style:outset;
   border-radius: 3px;
   padding: 3px;
@@ -21,6 +22,8 @@
 }
 
 .DebugPanelLeft .DebugPanelContent{
+  color: var(--primary-1-foreground);
+  background: var(--primary-1-background);
   display: none;
 }
 .DebugPanelLeft .DebugPanelIndicator{
@@ -29,7 +32,7 @@
 
 .DebugPanelLeft:hover {
   padding: 5px;
-  border: 1px dashed black;
+  border: 1px dashed var(--primary-1-border);
 }
 
 .DebugPanelLeft:hover .DebugPanelContent{

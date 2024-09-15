@@ -7720,6 +7720,8 @@ function _diagramWindow()
   let diagramWindow = document.createElement ("div");
     {
       diagramWindow.id = "diagramWindow";
+      diagramWindow.classList.add("diagramWindow");
+
       document.body.appendChild (diagramWindow);
     }
   return diagramWindow;

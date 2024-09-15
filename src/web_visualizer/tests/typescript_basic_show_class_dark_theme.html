@@ -1,0 +1,52 @@
+<!DOCTYPE html><html><head>
+<script type="text/javascript">
+/**
+ *
+ * Manual Visual Test:
+ * ===================
+ *
+ * Visualize a class
+ * (All test-specific stuff happens in this `script` area)
+ **/
+
+function initTestCase()
+{
+  gBackend = new BackendMock ();
+  gBackend.addOutlineData (gTestdata_outlineData);
+  checkDepsAndInit ();
+
+  showInitialWindows (gBackend);
+}
+
+
+function showInitialWindows(backend)
+{
+  const testdata = gTestdata_outlineData;
+  let type = "visualizeOutline";
+  let requestId = null;
+
+  let data = [
+    testdata["file:///usr/myfile.ts"].outline["MyClass2"]
+  ];
+  window_postRequest(type, requestId, data);
+}
+
+// --------------------------------------------------------------
+
+</script>
+
+<meta charset="utf-8"/>
+<title>VP test: show messageboxes</title>
+
+<link rel="stylesheet" type="text/css" href="../release/web_visualizer.css">
+<link rel="stylesheet" type="text/css" href="./shared_files/browserSystem.css">     <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+
+<script type="text/javascript" src="./shared_files/backendEmulation.js"></script>    <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+<script type="text/javascript" src="./shared_files/exampleoutlineData.js"></script>    <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+<script type="text/javascript" src="../release/web_visualizer.js">        </script>
+<script type="text/javascript" src="./shared_files/browserSystem.js">  </script>    <!-- ← ONLY IN PROTOTYPE BROWSER SYSTEM -->
+
+</head>
+<body class="theme-dark"  onload="javascript: initTestCase();">
+</body>
+</html>

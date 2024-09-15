@@ -4,10 +4,12 @@ import * as Outline from "../outlineproviderAPI/SymbolDefinition";
 import * as utils from '../utils';
 import { promises } from 'dns';
 import { request } from 'http';
+import { VsCodeWindow } from './adapter/vscodewindow';
 
 export class VisualizingTab
 {
   private readonly _vscodeWindow: any;
+  private _vscodeWindow2: VsCodeWindow;
   private _context: any;
 
   // lazy init; use ONLY through getWebviewPanel()
@@ -19,6 +21,8 @@ export class VisualizingTab
                      context:       any)
   {
     this._vscodeWindow = vscodeWindow;
+    this._vscodeWindow2 = new VsCodeWindow (vscodeWindow);
+
     this._context = context;
   }
 
@@ -30,7 +34,8 @@ export class VisualizingTab
   private getWebviewPanel()
   {
     if (null == this.__webviewPanel) {
-      this.__webviewPanel = WebviewCreator.createWebview (this._context);
+      this.__webviewPanel = WebviewCreator.createWebview (this._context,
+                                                          this._vscodeWindow2);
       this.__webviewPanel.onDidDispose(
           () => { this.__webviewPanel = null; },
           null, this._context.subscriptions

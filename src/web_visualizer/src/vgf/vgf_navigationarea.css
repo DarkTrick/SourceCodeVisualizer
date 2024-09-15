@@ -1,6 +1,6 @@
 .VgfNavigationArea{
   overflow: hidden;
-  background-color: #d0d0e0aa;
+  background-color: var(--canvas-background);
 }
 
 .VgfNavigationArea, .VgfInteractionArea

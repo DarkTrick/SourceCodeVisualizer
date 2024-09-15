@@ -3,14 +3,22 @@
     "files.exclude": {
         "*.txt": true,
         "**/.*": true,
-        "**/media/**": true,
+        "**/media/.vscode/**": true,
+        "**/media/web_visualizer.css": true,
+        "**/media/web_visualizer.js": true,
         "**/out/*": true
     },
     "typescript.tsdk": "./node_modules/typescript/lib",
     "files.watcherExclude": {
-        "**/media/**": true
+        "**/media/.vscode/**": true,
+        "**/media/web_visualizer.css": true,
+        "**/media/web_visualizer.js": true,
+        "**/out/*": true
     },
     "search.exclude": {
-        "**/media/**": true
+        "**/media/.vscode/**": true,
+        "**/media/web_visualizer.css": true,
+        "**/media/web_visualizer.js": true,
+        "**/out/*": true
     }
 }

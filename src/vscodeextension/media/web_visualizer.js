@@ -7069,7 +7069,10 @@ function _setup_scaleViewpoint(interactionArea, scalingObject)
   if (!scalingObject.vp_scale)
     console.debug ("PROGRAMMER WARNING: You tried to make an object scalable, that does not officially own a `vp_scale` property. However, you will need that property for correct translations of getBoundingClientRect()-coordinates. You should consider 'officially' adding the property (= adding it in object definition)");
 
-  interactionArea.addEventListener ("wheel", e => {zoom (e, scalingObject);});
+  interactionArea.addEventListener ("wheel", e => {
+    e.preventDefault();
+    zoom (e, scalingObject);
+  });
 
 }
 

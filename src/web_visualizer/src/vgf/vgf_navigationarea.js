@@ -72,6 +72,7 @@ function _setup_mouseWheelScrolling(interactionArea,
         !e.metaKey && !e.shiftKey)
     {
       scrolledObject.style.top  = scrolledObject.offsetTop - (e.deltaY) + "px";
+      scrolledObject.style.left  = scrolledObject.offsetLeft - (e.deltaX) + "px";
     }
 
     // horizontal scrolling

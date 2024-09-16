@@ -15,8 +15,11 @@
 }
 
 .button_flat:hover{
-  background-color: rgba(255, 255, 255, 0.438);
+  background-color: var(--primary-1-background-hover);
 }
+
+
 .button_flat:active{
-  background-color: rgba(214, 214, 214, 0.438);
+  background-color: var(--primary-1-background-active);
 }
+

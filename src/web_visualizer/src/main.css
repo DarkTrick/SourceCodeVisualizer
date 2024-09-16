@@ -1,8 +1,83 @@
+
+
 body{
   font-size:80%;
   font-family: Arial, Helvetica, sans-serif;
-  color: black;
 }
+
 textarea{
   font-size:85%;
+}
+
+/* .diagramWindow { */
+.diagramWindow {
+  --canvas-background: #d0d0e0aa;
+  --primary-1-background: #e7e7e7;
+  --primary-1-background-hover: #dddddd;
+  --primary-1-background-active: rgba(111, 111, 111, 0.438);;
+  --primary-1-foreground: #222222;
+  --primary-1-border: #00000040;
+
+  --window-border: 1px solid rgb(200, 200, 200);
+  --window-background: rgb(231, 231, 231);
+
+  --window-close-button-background-hover: red;
+  --window-close-button-foreground-hover: white;
+  --window-close-button-background-active: rgb(255, 100, 100);
+  --window-close-button-foreground-active: white;
+
+
+  --editor-background: rgba(255, 255, 255, 0.404);
+  --editor-foreground: none;
+  --editor-line-numbers: rgba(0, 0, 0, 0.404);
+  --declaration-button-background: linear-gradient(180deg, #e5e5e5 0%, #dAdAdA 100%);
+  --declaration-button-background-hover: linear-gradient(180deg, #eAeAeA 0%, #dFdFdF 100%);
+  --declaration-button-background-active: #cfcfcf;
+  --definition-connector-circle-color: #AAA;
+
+  --source-code-entity-class: blue;
+
+  --message-error-background: rgb(251, 223, 223);
+  --message-error-foreground: rgb(107, 0, 0);
+  --message-warning-background: rgb(252, 255, 226);
+  --message-warning-foreground: rgb(32, 33, 98);
+  --message-info-background: rgb(226, 242, 255);
+  --message-info-foreground: rgb(32, 33, 98);
+
+ color: var(--primary-1-foreground);
+}
+
+.theme-dark .diagramWindow {
+  --canvas-background: #1e1e1e;
+
+  --primary-1-background: #1e1e1e;
+  --primary-1-background-hover: #363636;
+  --primary-1-background-active: #414141;
+  --primary-1-foreground: #f5f5f5;
+  --primary-1-border: #414141;
+
+  --window-border: var(--primary-1-border);
+  --window-background: #2c2c2c;
+  --window-close-button-background-hover: #c30000;
+  --window-close-button-foreground-hover: rgba(240, 240, 240, 150);
+  --window-close-button-background-active: rgb(255, 100, 100);
+  --window-close-button-foreground-active: white;
+
+  --editor-background: #1e1e1e;
+  --editor-line-numbers: #858585;
+  --declaration-button-background: linear-gradient(180deg, #1e1e1e 0%, #292929 100%);
+  --declaration-button-background-hover: linear-gradient(180deg, #242424 0%, #2E2E2E 100%);
+  --declaration-button-background-active: var(----primary-1-background-active);
+  --definition-connector-circle-color: #aaaaaa7e;
+
+  --source-code-entity-class: #3b8eea;
+
+  --message-error-background: rgb(128 20 20);
+  --message-error-foreground: #ffd0d0;
+  --message-warning-background: #bc8d00;
+  --message-warning-foreground: black;
+  --message-info-background: #38acff;
+  --message-info-foreground: black;
+
+ color: var(--primary-1-foreground);
 }

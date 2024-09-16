@@ -1,7 +1,7 @@
 
 .VgfMenu{
-  border: 1px solid #a2a2a2;
-  background: #fcfcfc;
+  border: 1px solid var(--primary-1-border);
+  background: var(--primary-1-background);
 
   /*display: inline-block;
   position: absolute;*/
@@ -9,6 +9,7 @@
   padding: 0px;
   margin: 0px;
 }
+
 
 .VgfMenuSeparator{
   border-top: 1px solid rgba(0,0,0,0.213);

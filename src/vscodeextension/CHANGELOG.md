@@ -1,5 +1,9 @@
 # Change Log
 
+## [v0.1.8]
+
+- Added dark color theme
+-
 
 ## [v0.1.7]
 

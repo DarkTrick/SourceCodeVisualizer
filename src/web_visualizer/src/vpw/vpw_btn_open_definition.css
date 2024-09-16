@@ -5,7 +5,7 @@
   font-family: "Arial";
   border:  none;
   background: none;
-  color: black;
+  color: var(--primary-1-foreground);
   width: 13px;
   height: 13px;
   cursor:pointer;
@@ -38,7 +38,7 @@
 .VpwBtnOpenDefinition_ON:focus,
 .VpwBtnOpenDefinition_ON:hover
 {
-  background-color: #AAA;
+  background-color: var(--definition-connector-circle-color);
   border: 0px;
   border-radius: 10px;
 }

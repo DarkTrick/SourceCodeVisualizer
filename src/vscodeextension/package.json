@@ -1,7 +1,7 @@
 {
   "publisher": "visualprogrammingx",
   "name": "SourceCodeVisualizer",
-  "version": "0.1.7",
+  "version": "0.1.8",
 
   "displayName": "Source Code Visualizer",
   "description": "Visualize the calling structure of source code in a class diagram-like fashion",
@@ -75,7 +75,7 @@
     "vscode:prepublish": "npm run compile",
     "build_dependencies": "cd ../web_visualizer; npm run compile; cd ../vscodeextension;",
     "get_dependencies": "cp -u ../web_visualizer/release/* ./media/",
-    "precompile": "npm run get_dependencies",
+    "precompile": "npm run build_dependencies && npm run get_dependencies",
     "compile": "tsc -p ./",
     "lint": "eslint src --ext ts",
     "watch": "tsc -watch -p ./",

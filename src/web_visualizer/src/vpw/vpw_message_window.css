@@ -8,8 +8,8 @@
 }
 
 .VpwMessageWindow.Error {
-  background-color:rgb(251, 223, 223);
-  color: rgb(107, 0, 0);
+  background-color: var(--message-error-background);
+  color: var(--message-error-foreground);
 }
 
 .VpwMessageWindow.Error .Window_Titlearea::before {
@@ -18,8 +18,8 @@
 
 .VpwMessageWindow.Warning
 {
-  background-color:rgb(252, 255, 226);
-  color: rgb(32, 33, 98);
+  background-color:var(--message-warning-background);
+  color: var(--message-warning-foreground);
 }
 
 .VpwMessageWindow.Warning .Window_Titlearea::before {
@@ -28,8 +28,8 @@
 
 .VpwMessageWindow.Info
 {
-  background-color:rgb(226, 242, 255);
-  color: rgb(32, 33, 98);
+  background-color: var(--message-info-background);
+  color: var(--message-info-foreground);
 }
 .VpwMessageWindow.Info .Window_Titlearea::before {
   content: "🤫 ";

@@ -134,9 +134,20 @@ function zoom (mouseevent, scalingObject)
     let diffX_old = (mouseX) - obj_centerX_old;
     let diffY_old = (mouseY) - obj_centerY_old;
 
+    // determine how "strong" we want to scale
+    let scaleWeight = 0.001;
+    {
+      // high precision scroll wheel or touchpad
+      if(e.delteMode === 0)
+        scaleWeight = 0.01;
+
+      // traditional scroll wheel
+      if(e.delteMode === 1)
+        scaleWeight = 0.001;
+    }
 
     // do scaling
-    let scaleAmount = -(e.deltaY/1000);
+    let scaleAmount = -(e.deltaY*scaleWeight);
     _scaleObject (scalingObject, scaleAmount);
 
 

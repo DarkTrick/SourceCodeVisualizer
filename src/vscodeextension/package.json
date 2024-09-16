@@ -1,7 +1,7 @@
 {
   "publisher": "visualprogrammingx",
   "name": "SourceCodeVisualizer",
-  "version": "0.1.8",
+  "version": "0.1.9",
 
   "displayName": "Source Code Visualizer",
   "description": "Visualize the calling structure of source code in a class diagram-like fashion",
